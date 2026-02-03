@@ -17,6 +17,6 @@
 <div class="container">
   <section id="main_content">
     <markdown *ngIf="!post" src="assets/markdown/README.md" (click)="onMarkdownClick($event)"></markdown>
-    <markdown *ngIf="post" src="assets/markdown/{{post}}/README.md"></markdown>
+    <markdown *ngIf="post" src="assets/markdown/{{post}}/README.md" (click)="onMarkdownClick($event)"></markdown>
   </section>
 </div>

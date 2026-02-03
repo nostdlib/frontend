@@ -24,7 +24,7 @@ export class BlogComponent {
 		});
 	}
 
-	ngAfterViewChecked() {
+	ngAfterViewInit() {
 		Prism.highlightAll(true, () => {
 			console.log('highlighted!');
 		});
@@ -35,6 +35,13 @@ export class BlogComponent {
 		const anchor = target.closest('a') as HTMLAnchorElement | null;
 		if (!anchor) return;
 		const href = anchor.getAttribute('href');
+		if (href?.startsWith('#')) {
+			// const id = href.slice(1);
+			// document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+			// history.pushState(null, '', href);
+			return;
+		}
+		
 		if (!href) return;
 		if (
 		  anchor.target === '_blank' ||

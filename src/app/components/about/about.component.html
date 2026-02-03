@@ -37,9 +37,7 @@
           <div class="data-stream">
             @for (line of dataStream; track line) {
               <div class="stream-line">
-                @for (bit of line; track bit) {
-                  <div class="stream-bit">{{bit}}</div>
-                }
+                  <div *ngFor="let bit of line" class="stream-bit">{{bit}}</div>
               </div>
             }
           </div>
