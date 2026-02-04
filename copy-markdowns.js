@@ -15,7 +15,7 @@ function copyFile(src, dest) {
 	console.log(`Copied: ${src} → ${dest}`);
 }
 
-// copyFile(rootMd, path.join(assetsDir, 'README.md'));
+copyFile(rootMd, path.join(assetsDir, 'README.md'));
 
 function copyContentMd(srcDir, destDir) {
 	const items = fs.readdirSync(srcDir, { withFileTypes: true });
@@ -30,4 +30,4 @@ function copyContentMd(srcDir, destDir) {
 	}
 }
 
-// copyContentMd(contentDir, path.join(assetsDir, ''));
+copyContentMd(contentDir, path.join(assetsDir, ''));
