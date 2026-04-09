@@ -205,3 +205,18 @@ Thumbs.db
 
 # Windows null device artifact
 nul
+
+# Blazor publish output
+release/
+dist/
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# User secrets
+secrets.json
+
+# Environment files
+.env
+.env.*
