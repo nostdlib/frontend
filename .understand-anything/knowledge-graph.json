@@ -1,0 +1,2204 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "Nostdlib",
+    "languages": [
+      "csharp",
+      "javascript"
+    ],
+    "frameworks": [
+      "Blazor WebAssembly",
+      "Microsoft.Extensions.Localization"
+    ],
+    "description": "Blazor WebAssembly frontend project built with .NET 10.0 featuring multi-language localization (EN/RU/AM) and PWA support with service worker caching.",
+    "analyzedAt": "2026-03-25T10:16:05.661200+00:00",
+    "gitCommitHash": "b4e29059b8eb87e59cd72dd3c6f5056716f2e841"
+  },
+  "nodes": [
+    {
+      "id": "file:Models/JobPosition.cs",
+      "type": "file",
+      "name": "Models/JobPosition.cs",
+      "summary": "Defines the JobPosition record type representing a job listing with fields for id, code, title, level, location, type, optional description, and requirements.",
+      "tags": [
+        "data-model",
+        "record",
+        "careers"
+      ],
+      "complexity": "simple",
+      "filePath": "Models/JobPosition.cs"
+    },
+    {
+      "id": "class:Models/JobPosition.cs:JobPosition",
+      "type": "class",
+      "name": "JobPosition",
+      "summary": "Immutable record representing a job position with required fields (Id, Code, Title, Level, Location, Type) and optional Description and Requirements list.",
+      "tags": [
+        "data-model",
+        "record"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        3,
+        12
+      ]
+    },
+    {
+      "id": "file:Models/SocialLink.cs",
+      "type": "file",
+      "name": "Models/SocialLink.cs",
+      "summary": "Defines the SocialLink record type representing a social media link with name, URL, description, and icon type fields.",
+      "tags": [
+        "data-model",
+        "record",
+        "social"
+      ],
+      "complexity": "simple",
+      "filePath": "Models/SocialLink.cs"
+    },
+    {
+      "id": "class:Models/SocialLink.cs:SocialLink",
+      "type": "class",
+      "name": "SocialLink",
+      "summary": "Immutable record representing a social media link with Name, Url, Description, and IconType properties.",
+      "tags": [
+        "data-model",
+        "record"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        3,
+        8
+      ]
+    },
+    {
+      "id": "file:Program.cs",
+      "type": "file",
+      "name": "Program.cs",
+      "summary": "Application entry point that configures the Blazor WebAssembly host, registers DI services (HttpClient, IDataService, ILocalizationService), adds localization, and initializes the language preference before running the app.",
+      "tags": [
+        "entry-point",
+        "dependency-injection",
+        "config",
+        "blazor-wasm"
+      ],
+      "complexity": "simple",
+      "filePath": "Program.cs"
+    },
+    {
+      "id": "file:Constants/Routes.cs",
+      "type": "file",
+      "name": "Constants/Routes.cs",
+      "summary": "Defines application route constants for the Home page, Careers anchor, and Contact anchor.",
+      "tags": [
+        "constants",
+        "routing",
+        "config"
+      ],
+      "complexity": "simple",
+      "filePath": "Constants/Routes.cs"
+    },
+    {
+      "id": "class:Constants/Routes.cs:Routes",
+      "type": "class",
+      "name": "Routes",
+      "summary": "Static class holding string constants for application routes: Home ('/'), Careers ('#careers'), and Contact ('#contact').",
+      "tags": [
+        "constants",
+        "routing"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        3,
+        8
+      ]
+    },
+    {
+      "id": "file:Constants/AppConstants.cs",
+      "type": "file",
+      "name": "Constants/AppConstants.cs",
+      "summary": "Defines application-wide constants including company name, tagline, logo symbol, social media URLs, and default meta tags for SEO.",
+      "tags": [
+        "constants",
+        "config",
+        "branding"
+      ],
+      "complexity": "simple",
+      "filePath": "Constants/AppConstants.cs"
+    },
+    {
+      "id": "class:Constants/AppConstants.cs:AppConstants",
+      "type": "class",
+      "name": "AppConstants",
+      "summary": "Top-level static class holding company branding constants (CompanyName, Tagline, LogoSymbol) and nested classes for Social and Meta constants.",
+      "tags": [
+        "constants",
+        "config"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        3,
+        20
+      ]
+    },
+    {
+      "id": "class:Constants/AppConstants.cs:Social",
+      "type": "class",
+      "name": "Social",
+      "summary": "Nested static class within AppConstants holding LinkedIn and GitHub URL constants.",
+      "tags": [
+        "constants",
+        "social"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        9,
+        13
+      ]
+    },
+    {
+      "id": "class:Constants/AppConstants.cs:Meta",
+      "type": "class",
+      "name": "Meta",
+      "summary": "Nested static class within AppConstants holding SEO-related constants (DefaultTitle, Description).",
+      "tags": [
+        "constants",
+        "seo"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        15,
+        19
+      ]
+    },
+    {
+      "id": "file:Services/IDataService.cs",
+      "type": "file",
+      "name": "Services/IDataService.cs",
+      "summary": "Defines the IDataService interface contract with async methods for retrieving job positions and social links, plus a cache-clearing method.",
+      "tags": [
+        "interface",
+        "service",
+        "data-access"
+      ],
+      "complexity": "simple",
+      "filePath": "Services/IDataService.cs"
+    },
+    {
+      "id": "class:Services/IDataService.cs:IDataService",
+      "type": "class",
+      "name": "IDataService",
+      "summary": "Service interface defining async data retrieval for JobPosition and SocialLink entities with caching support.",
+      "tags": [
+        "interface",
+        "service"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        5,
+        11
+      ]
+    },
+    {
+      "id": "function:Services/IDataService.cs:GetJobPositionsAsync",
+      "type": "function",
+      "name": "GetJobPositionsAsync",
+      "summary": "Returns all job positions as an async list.",
+      "tags": [
+        "interface-method",
+        "async"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        7,
+        7
+      ]
+    },
+    {
+      "id": "function:Services/IDataService.cs:GetJobPositionByIdAsync",
+      "type": "function",
+      "name": "GetJobPositionByIdAsync",
+      "summary": "Returns a single job position by its ID, or null if not found.",
+      "tags": [
+        "interface-method",
+        "async"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        8,
+        8
+      ]
+    },
+    {
+      "id": "function:Services/IDataService.cs:GetSocialLinksAsync",
+      "type": "function",
+      "name": "GetSocialLinksAsync",
+      "summary": "Returns all social links as an async list.",
+      "tags": [
+        "interface-method",
+        "async"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        9,
+        9
+      ]
+    },
+    {
+      "id": "function:Services/IDataService.cs:ClearCache",
+      "type": "function",
+      "name": "ClearCache",
+      "summary": "Clears the data service's in-memory cache.",
+      "tags": [
+        "interface-method",
+        "caching"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        10,
+        10
+      ]
+    },
+    {
+      "id": "file:Services/ILocalizationService.cs",
+      "type": "file",
+      "name": "Services/ILocalizationService.cs",
+      "summary": "Defines the ILocalizationService interface for multi-language support with language switching, initialization, and change notification, plus the LanguageInfo record type.",
+      "tags": [
+        "interface",
+        "service",
+        "localization"
+      ],
+      "complexity": "simple",
+      "filePath": "Services/ILocalizationService.cs"
+    },
+    {
+      "id": "class:Services/ILocalizationService.cs:ILocalizationService",
+      "type": "class",
+      "name": "ILocalizationService",
+      "summary": "Interface defining localization operations: current language access, string key lookup via indexer, async language switching, initialization, supported language listing, and a language-changed event.",
+      "tags": [
+        "interface",
+        "localization"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        3,
+        11
+      ]
+    },
+    {
+      "id": "class:Services/ILocalizationService.cs:LanguageInfo",
+      "type": "class",
+      "name": "LanguageInfo",
+      "summary": "Record holding language metadata: Code (e.g., 'en'), Name (e.g., 'English'), and NativeName (e.g., the language's own script).",
+      "tags": [
+        "data-model",
+        "record",
+        "localization"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        13,
+        13
+      ]
+    },
+    {
+      "id": "function:Services/ILocalizationService.cs:SetLanguageAsync",
+      "type": "function",
+      "name": "SetLanguageAsync",
+      "summary": "Async method to change the current UI language.",
+      "tags": [
+        "interface-method",
+        "async",
+        "localization"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        7,
+        7
+      ]
+    },
+    {
+      "id": "function:Services/ILocalizationService.cs:InitializeAsync",
+      "type": "function",
+      "name": "InitializeAsync",
+      "summary": "Async method to initialize the localization service and load saved language preference.",
+      "tags": [
+        "interface-method",
+        "async",
+        "localization"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        8,
+        8
+      ]
+    },
+    {
+      "id": "function:Services/ILocalizationService.cs:GetSupportedLanguages",
+      "type": "function",
+      "name": "GetSupportedLanguages",
+      "summary": "Returns the list of all supported languages.",
+      "tags": [
+        "interface-method",
+        "localization"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        9,
+        9
+      ]
+    },
+    {
+      "id": "file:Services/LocalizationService.cs",
+      "type": "file",
+      "name": "Services/LocalizationService.cs",
+      "summary": "Implements ILocalizationService using JSON locale files fetched via HttpClient, with localStorage-backed language persistence, English fallback, and a language-changed event for UI reactivity.",
+      "tags": [
+        "service",
+        "localization",
+        "implementation",
+        "async"
+      ],
+      "complexity": "moderate",
+      "filePath": "Services/LocalizationService.cs"
+    },
+    {
+      "id": "class:Services/LocalizationService.cs:LocalizationService",
+      "type": "class",
+      "name": "LocalizationService",
+      "summary": "Concrete localization service that loads JSON locale files, persists language preference to localStorage via JS interop, supports English/Russian/Armenian, and notifies subscribers on language change.",
+      "tags": [
+        "service",
+        "localization",
+        "implementation"
+      ],
+      "complexity": "moderate",
+      "filePath": "",
+      "lineRange": [
+        6,
+        132
+      ]
+    },
+    {
+      "id": "function:Services/LocalizationService.cs:LocalizationService",
+      "type": "function",
+      "name": "LocalizationService (constructor)",
+      "summary": "Constructor that receives IJSRuntime and HttpClient dependencies for JS interop and locale file fetching.",
+      "tags": [
+        "constructor",
+        "dependency-injection"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        29,
+        33
+      ]
+    },
+    {
+      "id": "function:Services/LocalizationService.cs:SetLanguageAsync",
+      "type": "function",
+      "name": "SetLanguageAsync",
+      "summary": "Changes the current language if supported, loads new resources, persists selection to localStorage, and fires the OnLanguageChanged event.",
+      "tags": [
+        "async",
+        "localization",
+        "js-interop"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        56,
+        74
+      ]
+    },
+    {
+      "id": "function:Services/LocalizationService.cs:InitializeAsync",
+      "type": "function",
+      "name": "InitializeAsync",
+      "summary": "Loads English fallback resources, reads saved language preference from localStorage, and loads the appropriate locale, with error handling for prerendering scenarios.",
+      "tags": [
+        "async",
+        "localization",
+        "initialization"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        76,
+        102
+      ]
+    },
+    {
+      "id": "function:Services/LocalizationService.cs:GetSupportedLanguages",
+      "type": "function",
+      "name": "GetSupportedLanguages",
+      "summary": "Returns the static list of supported languages (English, Russian, Armenian).",
+      "tags": [
+        "localization"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        104,
+        104
+      ]
+    },
+    {
+      "id": "function:Services/LocalizationService.cs:LoadResourcesAsync",
+      "type": "function",
+      "name": "LoadResourcesAsync",
+      "summary": "Loads locale resources for a given language code, reusing cached English fallback when applicable.",
+      "tags": [
+        "async",
+        "localization",
+        "private"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        106,
+        116
+      ]
+    },
+    {
+      "id": "function:Services/LocalizationService.cs:LoadLocaleFileAsync",
+      "type": "function",
+      "name": "LoadLocaleFileAsync",
+      "summary": "Fetches a locale JSON file from 'data/{languageCode}/locale.json' via HttpClient, returning null on failure for fallback handling.",
+      "tags": [
+        "async",
+        "http",
+        "localization",
+        "private"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        118,
+        131
+      ]
+    },
+    {
+      "id": "file:Services/JsonDataService.cs",
+      "type": "file",
+      "name": "Services/JsonDataService.cs",
+      "summary": "Implements IDataService by fetching JSON data files via HttpClient with language-aware caching, automatic cache invalidation on language change, and English fallback when localized data is unavailable.",
+      "tags": [
+        "service",
+        "data-access",
+        "implementation",
+        "caching"
+      ],
+      "complexity": "moderate",
+      "filePath": "Services/JsonDataService.cs"
+    },
+    {
+      "id": "class:Services/JsonDataService.cs:JsonDataService",
+      "type": "class",
+      "name": "JsonDataService",
+      "summary": "Concrete data service that loads job positions and social links from localized JSON files, caches results per language, subscribes to language-change events for cache invalidation, and implements IDisposable for cleanup.",
+      "tags": [
+        "service",
+        "data-access",
+        "implementation",
+        "disposable"
+      ],
+      "complexity": "moderate",
+      "filePath": "",
+      "lineRange": [
+        6,
+        94
+      ]
+    },
+    {
+      "id": "function:Services/JsonDataService.cs:JsonDataService",
+      "type": "function",
+      "name": "JsonDataService (constructor)",
+      "summary": "Constructor that injects HttpClient and ILocalizationService, subscribing to the OnLanguageChanged event for cache invalidation.",
+      "tags": [
+        "constructor",
+        "dependency-injection"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        14,
+        19
+      ]
+    },
+    {
+      "id": "function:Services/JsonDataService.cs:OnLanguageChanged",
+      "type": "function",
+      "name": "OnLanguageChanged",
+      "summary": "Event handler that clears the data cache when the application language changes.",
+      "tags": [
+        "event-handler",
+        "caching",
+        "private"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        21,
+        24
+      ]
+    },
+    {
+      "id": "function:Services/JsonDataService.cs:ClearCache",
+      "type": "function",
+      "name": "ClearCache",
+      "summary": "Clears the in-memory data cache and resets the cached language tracker.",
+      "tags": [
+        "caching"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        26,
+        30
+      ]
+    },
+    {
+      "id": "function:Services/JsonDataService.cs:GetDataPath",
+      "type": "function",
+      "name": "GetDataPath",
+      "summary": "Builds a localized data file path using the current language from the localization service.",
+      "tags": [
+        "utility",
+        "private"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        32,
+        36
+      ]
+    },
+    {
+      "id": "function:Services/JsonDataService.cs:LoadDataAsync",
+      "type": "function",
+      "name": "LoadDataAsync",
+      "summary": "Generic async method that loads a list of entities from a localized JSON file with caching and English fallback on failure.",
+      "tags": [
+        "async",
+        "generic",
+        "caching",
+        "http",
+        "private"
+      ],
+      "complexity": "moderate",
+      "filePath": "",
+      "lineRange": [
+        40,
+        69
+      ]
+    },
+    {
+      "id": "function:Services/JsonDataService.cs:GetJobPositionsAsync",
+      "type": "function",
+      "name": "GetJobPositionsAsync",
+      "summary": "Returns all job positions by delegating to LoadDataAsync with the careers.json filename.",
+      "tags": [
+        "async",
+        "data-access"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        71,
+        72
+      ]
+    },
+    {
+      "id": "function:Services/JsonDataService.cs:GetJobPositionByIdAsync",
+      "type": "function",
+      "name": "GetJobPositionByIdAsync",
+      "summary": "Finds a single job position by ID using LINQ FirstOrDefault over all positions.",
+      "tags": [
+        "async",
+        "data-access",
+        "linq"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        74,
+        78
+      ]
+    },
+    {
+      "id": "function:Services/JsonDataService.cs:GetSocialLinksAsync",
+      "type": "function",
+      "name": "GetSocialLinksAsync",
+      "summary": "Returns all social links by delegating to LoadDataAsync with the social-links.json filename.",
+      "tags": [
+        "async",
+        "data-access"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        80,
+        81
+      ]
+    },
+    {
+      "id": "function:Services/JsonDataService.cs:Dispose",
+      "type": "function",
+      "name": "Dispose",
+      "summary": "Unsubscribes from the OnLanguageChanged event, clears the cache, and suppresses finalization.",
+      "tags": [
+        "disposable",
+        "cleanup"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        83,
+        93
+      ]
+    },
+    {
+      "id": "file:App.razor",
+      "type": "file",
+      "name": "App.razor",
+      "summary": "Root Blazor component that configures the Router with MainLayout as the default layout and provides a fallback 'Not found' message for unmatched routes.",
+      "tags": [
+        "component",
+        "routing",
+        "blazor-wasm",
+        "entry-point"
+      ],
+      "complexity": "simple",
+      "filePath": "App.razor"
+    },
+    {
+      "id": "class:App.razor:App",
+      "type": "class",
+      "name": "App",
+      "summary": "Root Blazor component that wraps the Router, directing matched routes to RouteView with MainLayout and unmatched routes to a not-found message.",
+      "tags": [
+        "component",
+        "routing"
+      ],
+      "complexity": "simple",
+      "filePath": "",
+      "lineRange": [
+        1,
+        13
+      ]
+    },
+    {
+      "id": "file:Components/Icons/ArrowIcon.razor",
+      "type": "file",
+      "name": "Components/Icons/ArrowIcon.razor",
+      "summary": "SVG arrow icon component rendered as an inline diagonal arrow pointing upper-right, with a configurable Size parameter defaulting to 20.",
+      "tags": [
+        "icon",
+        "svg-component",
+        "ui",
+        "blazor-component"
+      ],
+      "complexity": "simple",
+      "filePath": "Components/Icons/ArrowIcon.razor"
+    },
+    {
+      "id": "file:Components/Icons/GitHubIcon.razor",
+      "type": "file",
+      "name": "Components/Icons/GitHubIcon.razor",
+      "summary": "SVG GitHub logo icon component with a configurable Size parameter defaulting to 28, used to render the GitHub brand mark in the UI.",
+      "tags": [
+        "icon",
+        "svg-component",
+        "ui",
+        "blazor-component"
+      ],
+      "complexity": "simple",
+      "filePath": "Components/Icons/GitHubIcon.razor"
+    },
+    {
+      "id": "file:Components/Icons/LinkedInIcon.razor",
+      "type": "file",
+      "name": "Components/Icons/LinkedInIcon.razor",
+      "summary": "SVG LinkedIn logo icon component with a configurable Size parameter defaulting to 28, used to render the LinkedIn brand mark in the UI.",
+      "tags": [
+        "icon",
+        "svg-component",
+        "ui",
+        "blazor-component"
+      ],
+      "complexity": "simple",
+      "filePath": "Components/Icons/LinkedInIcon.razor"
+    },
+    {
+      "id": "file:Layout/MainLayout.razor",
+      "type": "file",
+      "name": "Layout/MainLayout.razor",
+      "summary": "Minimal root layout component inheriting LayoutComponentBase that renders only the @Body content with no additional chrome or wrapper markup.",
+      "tags": [
+        "layout",
+        "blazor-component",
+        "root-layout"
+      ],
+      "complexity": "simple",
+      "filePath": "Layout/MainLayout.razor"
+    },
+    {
+      "id": "file:Pages/Error.razor",
+      "type": "file",
+      "name": "Pages/Error.razor",
+      "summary": "Error page component routed at /Error that displays a localized error message with a warning symbol, a return-home button, and scoped CSS styling. Implements IDisposable to subscribe and unsubscribe from language-change events.",
+      "tags": [
+        "page",
+        "error-handling",
+        "localization",
+        "blazor-component",
+        "ui"
+      ],
+      "complexity": "moderate",
+      "filePath": "Pages/Error.razor"
+    },
+    {
+      "id": "file:Pages/Home.razor",
+      "type": "file",
+      "name": "Pages/Home.razor",
+      "summary": "Root landing page component routed at / that composes the main site layout by rendering Navbar, Hero, Careers, Contact, and Footer sections in sequence.",
+      "tags": [
+        "page",
+        "landing-page",
+        "composition",
+        "blazor-component"
+      ],
+      "complexity": "simple",
+      "filePath": "Pages/Home.razor"
+    },
+    {
+      "id": "file:Pages/NotFound.razor",
+      "type": "file",
+      "name": "Pages/NotFound.razor",
+      "summary": "404 Not Found page component routed at /not-found using MainLayout, displaying localized title and message. Implements IDisposable to manage language-change event subscriptions.",
+      "tags": [
+        "page",
+        "error-handling",
+        "localization",
+        "blazor-component"
+      ],
+      "complexity": "simple",
+      "filePath": "Pages/NotFound.razor"
+    },
+    {
+      "id": "file:Shared/Careers.razor",
+      "type": "file",
+      "name": "Shared/Careers.razor",
+      "summary": "Careers section component that fetches job positions via IDataService and renders them in a Slider carousel, each card showing code, type, level, location, description, requirements, and a LinkedIn apply link. Reloads data on language change.",
+      "tags": [
+        "section",
+        "data-driven",
+        "localization",
+        "blazor-component",
+        "ui"
+      ],
+      "complexity": "moderate",
+      "filePath": "Shared/Careers.razor"
+    },
+    {
+      "id": "file:Shared/Contact.razor",
+      "type": "file",
+      "name": "Shared/Contact.razor",
+      "summary": "Contact section component that fetches social links via IDataService and renders them as clickable cards with LinkedIn, GitHub, and arrow icons. Reloads data on language change for localized content.",
+      "tags": [
+        "section",
+        "data-driven",
+        "localization",
+        "blazor-component",
+        "ui"
+      ],
+      "complexity": "moderate",
+      "filePath": "Shared/Contact.razor"
+    },
+    {
+      "id": "file:Shared/Footer.razor",
+      "type": "file",
+      "name": "Shared/Footer.razor",
+      "summary": "Footer component displaying the company brand logo symbol, name, copyright year (computed dynamically), localized rights text, and a tagline. Subscribes to language-change events for dynamic re-rendering.",
+      "tags": [
+        "section",
+        "footer",
+        "localization",
+        "blazor-component",
+        "ui"
+      ],
+      "complexity": "simple",
+      "filePath": "Shared/Footer.razor"
+    },
+    {
+      "id": "file:Shared/Hero.razor",
+      "type": "file",
+      "name": "Shared/Hero.razor",
+      "summary": "Hero section Blazor component featuring an animated typing effect that cycles through localized title text, with cybersecurity-themed decorative backgrounds including binary streams, neural network nodes, radar sweep, and crypto elements.",
+      "tags": [
+        "blazor-component",
+        "hero-section",
+        "typing-animation",
+        "localization",
+        "disposable"
+      ],
+      "complexity": "moderate",
+      "filePath": "Shared/Hero.razor"
+    },
+    {
+      "id": "function:Shared/Hero.razor:OnInitialized",
+      "type": "function",
+      "name": "OnInitialized",
+      "summary": "Blazor lifecycle override that subscribes to language change events and initiates the typing animation on component load.",
+      "tags": [
+        "lifecycle",
+        "initialization"
+      ],
+      "complexity": "simple",
+      "filePath": "Shared/Hero.razor",
+      "lineRange": [
+        81,
+        85
+      ]
+    },
+    {
+      "id": "function:Shared/Hero.razor:TypeNextChar",
+      "type": "function",
+      "name": "TypeNextChar",
+      "summary": "Timer callback that appends one character at a time from the localized title text to produce a typewriter effect, resetting and looping after a 3-second pause when the full text is displayed.",
+      "tags": [
+        "animation",
+        "timer-callback",
+        "typewriter"
+      ],
+      "complexity": "moderate",
+      "filePath": "Shared/Hero.razor",
+      "lineRange": [
+        101,
+        124
+      ]
+    },
+    {
+      "id": "file:Shared/LanguageSelector.razor",
+      "type": "file",
+      "name": "Shared/LanguageSelector.razor",
+      "summary": "Dropdown language selector component that displays available languages from the localization service, allowing users to switch the application language via an async call.",
+      "tags": [
+        "blazor-component",
+        "language-selector",
+        "localization",
+        "dropdown",
+        "disposable"
+      ],
+      "complexity": "moderate",
+      "filePath": "Shared/LanguageSelector.razor"
+    },
+    {
+      "id": "function:Shared/LanguageSelector.razor:SelectLanguage",
+      "type": "function",
+      "name": "SelectLanguage",
+      "summary": "Async method that delegates language switching to the localization service and closes the dropdown upon selection.",
+      "tags": [
+        "localization",
+        "async",
+        "user-interaction"
+      ],
+      "complexity": "simple",
+      "filePath": "Shared/LanguageSelector.razor",
+      "lineRange": [
+        48,
+        52
+      ]
+    },
+    {
+      "id": "file:Shared/Navbar.razor",
+      "type": "file",
+      "name": "Shared/Navbar.razor",
+      "summary": "Navigation bar component with scroll-aware styling, responsive mobile hamburger menu with body scroll lock, localized navigation links, and an embedded LanguageSelector child component.",
+      "tags": [
+        "blazor-component",
+        "navigation",
+        "responsive",
+        "localization",
+        "js-interop"
+      ],
+      "complexity": "moderate",
+      "filePath": "Shared/Navbar.razor"
+    },
+    {
+      "id": "function:Shared/Navbar.razor:OnAfterRenderAsync",
+      "type": "function",
+      "name": "OnAfterRenderAsync",
+      "summary": "Sets up a JavaScript scroll event listener on first render, passing a .NET object reference so JS can call back OnScroll to toggle the navbar's scrolled state.",
+      "tags": [
+        "lifecycle",
+        "js-interop",
+        "scroll-detection"
+      ],
+      "complexity": "simple",
+      "filePath": "Shared/Navbar.razor",
+      "lineRange": [
+        68,
+        74
+      ]
+    },
+    {
+      "id": "function:Shared/Navbar.razor:OnScroll",
+      "type": "function",
+      "name": "OnScroll",
+      "summary": "JSInvokable callback that receives the current scroll position from JavaScript and toggles the navbar's scrolled CSS class when the user scrolls past 50 pixels.",
+      "tags": [
+        "js-invokable",
+        "scroll-detection"
+      ],
+      "complexity": "simple",
+      "filePath": "Shared/Navbar.razor",
+      "lineRange": [
+        77,
+        84
+      ]
+    },
+    {
+      "id": "file:Shared/Slider.razor",
+      "type": "file",
+      "name": "Shared/Slider.razor",
+      "summary": "Generic infinite-loop carousel/slider component with touch swipe support via JS interop, CSS transform-based transitions, clone-based wrapping for seamless looping, and dot navigation indicators.",
+      "tags": [
+        "blazor-component",
+        "generic",
+        "carousel",
+        "touch-support",
+        "js-interop"
+      ],
+      "complexity": "moderate",
+      "filePath": "Shared/Slider.razor"
+    },
+    {
+      "id": "function:Shared/Slider.razor:NextSlide",
+      "type": "function",
+      "name": "NextSlide",
+      "summary": "Advances the slider to the next item, and when reaching the end of the cloned track, disables CSS transition to invisibly jump back to the real first item for seamless infinite looping.",
+      "tags": [
+        "carousel",
+        "animation",
+        "infinite-loop"
+      ],
+      "complexity": "moderate",
+      "filePath": "Shared/Slider.razor",
+      "lineRange": [
+        91,
+        108
+      ]
+    },
+    {
+      "id": "function:Shared/Slider.razor:PrevSlide",
+      "type": "function",
+      "name": "PrevSlide",
+      "summary": "Moves the slider to the previous item, and when going before the first item, disables CSS transition to invisibly jump to the cloned last item for seamless infinite looping.",
+      "tags": [
+        "carousel",
+        "animation",
+        "infinite-loop"
+      ],
+      "complexity": "moderate",
+      "filePath": "Shared/Slider.razor",
+      "lineRange": [
+        110,
+        127
+      ]
+    },
+    {
+      "id": "file:_Imports.razor",
+      "type": "file",
+      "name": "_Imports.razor",
+      "summary": "Global Razor imports file that provides project-wide @using directives for ASP.NET Core Blazor framework namespaces and all Nostdlib application namespaces (Models, Constants, Services, Layout, Shared, Components.Icons).",
+      "tags": [
+        "blazor-config",
+        "global-imports",
+        "namespaces"
+      ],
+      "complexity": "simple",
+      "filePath": "_Imports.razor"
+    },
+    {
+      "id": "file:wwwroot/service-worker.js",
+      "type": "file",
+      "name": "wwwroot/service-worker.js",
+      "summary": "Development-mode service worker stub that registers an empty fetch handler, disabling all caching so resources are always fetched from the network during development.",
+      "tags": [
+        "service-worker",
+        "pwa",
+        "development"
+      ],
+      "complexity": "simple",
+      "filePath": "wwwroot/service-worker.js"
+    },
+    {
+      "id": "file:wwwroot/service-worker.published.js",
+      "type": "file",
+      "name": "wwwroot/service-worker.published.js",
+      "summary": "Production service worker that implements content-hash-based precaching of all Blazor assets from the auto-generated manifest, old cache cleanup on activation, network-first navigation with offline fallback, and cache-first strategy for static assets.",
+      "tags": [
+        "service-worker",
+        "pwa",
+        "caching",
+        "offline-support",
+        "production"
+      ],
+      "complexity": "moderate",
+      "filePath": "wwwroot/service-worker.published.js"
+    },
+    {
+      "id": "file:wwwroot/js/site.js",
+      "type": "file",
+      "name": "wwwroot/js/site.js",
+      "summary": "Client-side JavaScript utilities providing a scroll listener for navbar scroll detection (called from Blazor), a base64-to-blob file download helper, and a touch swipe handler for the Slider component with directional detection and threshold-based gesture recognition.",
+      "tags": [
+        "js-interop",
+        "scroll-listener",
+        "touch-handler",
+        "file-download",
+        "blazor-bridge"
+      ],
+      "complexity": "moderate",
+      "filePath": "wwwroot/js/site.js"
+    },
+    {
+      "id": "function:wwwroot/js/site.js:setupScrollListener",
+      "type": "function",
+      "name": "window.setupScrollListener",
+      "summary": "Registers a window scroll event listener that invokes a .NET method (OnScroll) via the provided DotNetObjectReference, passing the current scrollY position back to Blazor.",
+      "tags": [
+        "js-interop",
+        "scroll-listener",
+        "blazor-bridge"
+      ],
+      "complexity": "simple",
+      "filePath": "wwwroot/js/site.js",
+      "lineRange": [
+        2,
+        6
+      ]
+    },
+    {
+      "id": "function:wwwroot/js/site.js:downloadFile",
+      "type": "function",
+      "name": "window.downloadFile",
+      "summary": "Converts a base64-encoded string to a Blob and triggers a browser file download by creating a temporary anchor element with an object URL.",
+      "tags": [
+        "file-download",
+        "base64",
+        "browser-api"
+      ],
+      "complexity": "simple",
+      "filePath": "wwwroot/js/site.js",
+      "lineRange": [
+        9,
+        25
+      ]
+    },
+    {
+      "id": "class:wwwroot/js/site.js:sliderTouch",
+      "type": "class",
+      "name": "window.sliderTouch",
+      "summary": "Touch gesture manager object that tracks swipe state per slider instance, distinguishes horizontal from vertical swipes, and calls back to Blazor OnSwipeNext/OnSwipePrev methods when the swipe exceeds a 50px threshold.",
+      "tags": [
+        "touch-handler",
+        "gesture-detection",
+        "blazor-bridge",
+        "slider"
+      ],
+      "complexity": "moderate",
+      "filePath": "wwwroot/js/site.js",
+      "lineRange": [
+        28,
+        94
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:Models/JobPosition.cs",
+      "target": "class:Models/JobPosition.cs:JobPosition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Models/JobPosition.cs",
+      "target": "class:Models/JobPosition.cs:JobPosition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:Models/SocialLink.cs",
+      "target": "class:Models/SocialLink.cs:SocialLink",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Models/SocialLink.cs",
+      "target": "class:Models/SocialLink.cs:SocialLink",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:Program.cs",
+      "target": "file:Services/JsonDataService.cs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Program.cs",
+      "target": "file:Services/IDataService.cs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Program.cs",
+      "target": "file:Services/LocalizationService.cs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Program.cs",
+      "target": "file:Services/ILocalizationService.cs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Program.cs",
+      "target": "file:App.razor",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Program.cs",
+      "target": "function:Services/LocalizationService.cs:InitializeAsync",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:Constants/Routes.cs",
+      "target": "class:Constants/Routes.cs:Routes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Constants/Routes.cs",
+      "target": "class:Constants/Routes.cs:Routes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:Constants/AppConstants.cs",
+      "target": "class:Constants/AppConstants.cs:AppConstants",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Constants/AppConstants.cs",
+      "target": "class:Constants/AppConstants.cs:Social",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Constants/AppConstants.cs",
+      "target": "class:Constants/AppConstants.cs:Meta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Constants/AppConstants.cs",
+      "target": "class:Constants/AppConstants.cs:AppConstants",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:Constants/AppConstants.cs:AppConstants",
+      "target": "class:Constants/AppConstants.cs:Social",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Constants/AppConstants.cs:AppConstants",
+      "target": "class:Constants/AppConstants.cs:Meta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Services/IDataService.cs",
+      "target": "class:Services/IDataService.cs:IDataService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Services/IDataService.cs",
+      "target": "class:Services/IDataService.cs:IDataService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:Services/IDataService.cs",
+      "target": "file:Models/JobPosition.cs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "class:Services/IDataService.cs:IDataService",
+      "target": "function:Services/IDataService.cs:GetJobPositionsAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/IDataService.cs:IDataService",
+      "target": "function:Services/IDataService.cs:GetJobPositionByIdAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/IDataService.cs:IDataService",
+      "target": "function:Services/IDataService.cs:GetSocialLinksAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/IDataService.cs:IDataService",
+      "target": "function:Services/IDataService.cs:ClearCache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Services/ILocalizationService.cs",
+      "target": "class:Services/ILocalizationService.cs:ILocalizationService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Services/ILocalizationService.cs",
+      "target": "class:Services/ILocalizationService.cs:LanguageInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Services/ILocalizationService.cs",
+      "target": "class:Services/ILocalizationService.cs:ILocalizationService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:Services/ILocalizationService.cs",
+      "target": "class:Services/ILocalizationService.cs:LanguageInfo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:Services/ILocalizationService.cs:ILocalizationService",
+      "target": "function:Services/ILocalizationService.cs:SetLanguageAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/ILocalizationService.cs:ILocalizationService",
+      "target": "function:Services/ILocalizationService.cs:InitializeAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/ILocalizationService.cs:ILocalizationService",
+      "target": "function:Services/ILocalizationService.cs:GetSupportedLanguages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Services/LocalizationService.cs",
+      "target": "class:Services/LocalizationService.cs:LocalizationService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Services/LocalizationService.cs",
+      "target": "class:Services/LocalizationService.cs:LocalizationService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:Services/LocalizationService.cs:LocalizationService",
+      "target": "class:Services/ILocalizationService.cs:ILocalizationService",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:Services/LocalizationService.cs:LocalizationService",
+      "target": "function:Services/LocalizationService.cs:LocalizationService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/LocalizationService.cs:LocalizationService",
+      "target": "function:Services/LocalizationService.cs:SetLanguageAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/LocalizationService.cs:LocalizationService",
+      "target": "function:Services/LocalizationService.cs:InitializeAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/LocalizationService.cs:LocalizationService",
+      "target": "function:Services/LocalizationService.cs:GetSupportedLanguages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/LocalizationService.cs:LocalizationService",
+      "target": "function:Services/LocalizationService.cs:LoadResourcesAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/LocalizationService.cs:LocalizationService",
+      "target": "function:Services/LocalizationService.cs:LoadLocaleFileAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "function:Services/LocalizationService.cs:SetLanguageAsync",
+      "target": "function:Services/LocalizationService.cs:LoadResourcesAsync",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:Services/LocalizationService.cs:InitializeAsync",
+      "target": "function:Services/LocalizationService.cs:LoadLocaleFileAsync",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:Services/LocalizationService.cs:InitializeAsync",
+      "target": "function:Services/LocalizationService.cs:LoadResourcesAsync",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:Services/LocalizationService.cs:LoadResourcesAsync",
+      "target": "function:Services/LocalizationService.cs:LoadLocaleFileAsync",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:Services/JsonDataService.cs",
+      "target": "class:Services/JsonDataService.cs:JsonDataService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Services/JsonDataService.cs",
+      "target": "class:Services/JsonDataService.cs:JsonDataService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:Services/JsonDataService.cs",
+      "target": "file:Models/JobPosition.cs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Services/JsonDataService.cs",
+      "target": "file:Models/SocialLink.cs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "class:Services/JsonDataService.cs:JsonDataService",
+      "target": "class:Services/IDataService.cs:IDataService",
+      "type": "implements",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "class:Services/JsonDataService.cs:JsonDataService",
+      "target": "function:Services/JsonDataService.cs:JsonDataService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/JsonDataService.cs:JsonDataService",
+      "target": "function:Services/JsonDataService.cs:OnLanguageChanged",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/JsonDataService.cs:JsonDataService",
+      "target": "function:Services/JsonDataService.cs:ClearCache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/JsonDataService.cs:JsonDataService",
+      "target": "function:Services/JsonDataService.cs:GetDataPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/JsonDataService.cs:JsonDataService",
+      "target": "function:Services/JsonDataService.cs:LoadDataAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/JsonDataService.cs:JsonDataService",
+      "target": "function:Services/JsonDataService.cs:GetJobPositionsAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/JsonDataService.cs:JsonDataService",
+      "target": "function:Services/JsonDataService.cs:GetJobPositionByIdAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/JsonDataService.cs:JsonDataService",
+      "target": "function:Services/JsonDataService.cs:GetSocialLinksAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "class:Services/JsonDataService.cs:JsonDataService",
+      "target": "function:Services/JsonDataService.cs:Dispose",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "function:Services/JsonDataService.cs:OnLanguageChanged",
+      "target": "function:Services/JsonDataService.cs:ClearCache",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:Services/JsonDataService.cs:LoadDataAsync",
+      "target": "function:Services/JsonDataService.cs:GetDataPath",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:Services/JsonDataService.cs:GetJobPositionsAsync",
+      "target": "function:Services/JsonDataService.cs:LoadDataAsync",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:Services/JsonDataService.cs:GetJobPositionByIdAsync",
+      "target": "function:Services/JsonDataService.cs:GetJobPositionsAsync",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:Services/JsonDataService.cs:GetSocialLinksAsync",
+      "target": "function:Services/JsonDataService.cs:LoadDataAsync",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:Services/JsonDataService.cs",
+      "target": "file:Services/ILocalizationService.cs",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:App.razor",
+      "target": "class:App.razor:App",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:App.razor",
+      "target": "class:App.razor:App",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:App.razor",
+      "target": "file:Layout/MainLayout.razor",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Pages/Home.razor",
+      "target": "file:Shared/Navbar.razor",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Pages/Home.razor",
+      "target": "file:Shared/Hero.razor",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Pages/Home.razor",
+      "target": "file:Shared/Careers.razor",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Pages/Home.razor",
+      "target": "file:Shared/Contact.razor",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Pages/Home.razor",
+      "target": "file:Shared/Footer.razor",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Shared/Contact.razor",
+      "target": "file:Components/Icons/LinkedInIcon.razor",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Shared/Contact.razor",
+      "target": "file:Components/Icons/GitHubIcon.razor",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Shared/Contact.razor",
+      "target": "file:Components/Icons/ArrowIcon.razor",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Shared/Careers.razor",
+      "target": "file:Shared/Slider.razor",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Shared/Careers.razor",
+      "target": "file:Services/IDataService.cs",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Shared/Careers.razor",
+      "target": "file:Services/ILocalizationService.cs",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Shared/Careers.razor",
+      "target": "file:Models/JobPosition.cs",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Shared/Careers.razor",
+      "target": "file:Constants/AppConstants.cs",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Shared/Contact.razor",
+      "target": "file:Services/IDataService.cs",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Shared/Contact.razor",
+      "target": "file:Services/ILocalizationService.cs",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Shared/Contact.razor",
+      "target": "file:Models/SocialLink.cs",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Shared/Footer.razor",
+      "target": "file:Services/ILocalizationService.cs",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Shared/Footer.razor",
+      "target": "file:Constants/AppConstants.cs",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Pages/Error.razor",
+      "target": "file:Services/ILocalizationService.cs",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Pages/NotFound.razor",
+      "target": "file:Services/ILocalizationService.cs",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Pages/NotFound.razor",
+      "target": "file:Layout/MainLayout.razor",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Shared/Hero.razor",
+      "target": "function:Shared/Hero.razor:OnInitialized",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Shared/Hero.razor",
+      "target": "function:Shared/Hero.razor:TypeNextChar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Shared/LanguageSelector.razor",
+      "target": "function:Shared/LanguageSelector.razor:SelectLanguage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Shared/Navbar.razor",
+      "target": "function:Shared/Navbar.razor:OnAfterRenderAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Shared/Navbar.razor",
+      "target": "function:Shared/Navbar.razor:OnScroll",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Shared/Slider.razor",
+      "target": "function:Shared/Slider.razor:NextSlide",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Shared/Slider.razor",
+      "target": "function:Shared/Slider.razor:PrevSlide",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:wwwroot/js/site.js",
+      "target": "function:wwwroot/js/site.js:setupScrollListener",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:wwwroot/js/site.js",
+      "target": "function:wwwroot/js/site.js:downloadFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:wwwroot/js/site.js",
+      "target": "class:wwwroot/js/site.js:sliderTouch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:Shared/Hero.razor",
+      "target": "file:Services/ILocalizationService.cs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Shared/LanguageSelector.razor",
+      "target": "file:Services/ILocalizationService.cs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Shared/Navbar.razor",
+      "target": "file:Services/ILocalizationService.cs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Shared/Navbar.razor",
+      "target": "file:Shared/LanguageSelector.razor",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:Shared/Navbar.razor",
+      "target": "file:Constants/Routes.cs",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Shared/Navbar.razor",
+      "target": "file:Constants/AppConstants.cs",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Shared/Hero.razor",
+      "target": "file:Constants/AppConstants.cs",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Shared/Navbar.razor",
+      "target": "file:wwwroot/js/site.js",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "function:Shared/Navbar.razor:OnAfterRenderAsync",
+      "target": "function:wwwroot/js/site.js:setupScrollListener",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:wwwroot/js/site.js:setupScrollListener",
+      "target": "function:Shared/Navbar.razor:OnScroll",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:Shared/Slider.razor",
+      "target": "file:wwwroot/js/site.js",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Shared/Slider.razor",
+      "target": "class:wwwroot/js/site.js:sliderTouch",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:wwwroot/js/site.js:sliderTouch",
+      "target": "function:Shared/Slider.razor:NextSlide",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:wwwroot/js/site.js:sliderTouch",
+      "target": "function:Shared/Slider.razor:PrevSlide",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:Shared/Hero.razor",
+      "target": "file:_Imports.razor",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Shared/LanguageSelector.razor",
+      "target": "file:_Imports.razor",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Shared/Navbar.razor",
+      "target": "file:_Imports.razor",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:Shared/Slider.razor",
+      "target": "file:_Imports.razor",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:_Imports.razor",
+      "target": "file:Services/ILocalizationService.cs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:_Imports.razor",
+      "target": "file:Constants/Routes.cs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:_Imports.razor",
+      "target": "file:Constants/AppConstants.cs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:wwwroot/service-worker.published.js",
+      "target": "file:wwwroot/service-worker.js",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:entry-and-config",
+      "name": "Entry & Config",
+      "description": "Application entry point, root router component, global imports, and the root layout shell. These files bootstrap the Blazor WebAssembly app, configure dependency injection, and define the top-level rendering pipeline.",
+      "nodeIds": [
+        "file:Program.cs",
+        "file:App.razor",
+        "file:_Imports.razor",
+        "file:Layout/MainLayout.razor"
+      ]
+    },
+    {
+      "id": "layer:pages",
+      "name": "Pages",
+      "description": "Routed page components that correspond to top-level URL routes. Each page composes shared UI sections or displays standalone content (landing page, error page, 404 page).",
+      "nodeIds": [
+        "file:Pages/Home.razor",
+        "file:Pages/Error.razor",
+        "file:Pages/NotFound.razor"
+      ]
+    },
+    {
+      "id": "layer:shared-sections",
+      "name": "Shared UI Sections",
+      "description": "Reusable section-level Blazor components that form the major visual blocks of the site: navigation bar, hero banner, careers listing, contact links, footer, language selector, and the generic slider/carousel.",
+      "nodeIds": [
+        "file:Shared/Navbar.razor",
+        "file:Shared/Hero.razor",
+        "file:Shared/Careers.razor",
+        "file:Shared/Contact.razor",
+        "file:Shared/Footer.razor",
+        "file:Shared/LanguageSelector.razor",
+        "file:Shared/Slider.razor"
+      ]
+    },
+    {
+      "id": "layer:icon-components",
+      "name": "Icon Components",
+      "description": "Leaf-level SVG icon components used by shared sections. These are pure presentational components with no service dependencies, accepting only a size parameter.",
+      "nodeIds": [
+        "file:Components/Icons/ArrowIcon.razor",
+        "file:Components/Icons/GitHubIcon.razor",
+        "file:Components/Icons/LinkedInIcon.razor"
+      ]
+    },
+    {
+      "id": "layer:services",
+      "name": "Services",
+      "description": "Service interfaces and their implementations providing data access (job positions, social links via JSON) and localization (multi-language support with localStorage persistence). These are injected via DI into components.",
+      "nodeIds": [
+        "file:Services/IDataService.cs",
+        "file:Services/ILocalizationService.cs",
+        "file:Services/JsonDataService.cs",
+        "file:Services/LocalizationService.cs"
+      ]
+    },
+    {
+      "id": "layer:data-models",
+      "name": "Data Models & Constants",
+      "description": "Plain data records (JobPosition, SocialLink) and application-wide constants (routes, branding, URLs). These are the foundational types with no upstream dependencies, consumed by services and components alike.",
+      "nodeIds": [
+        "file:Models/JobPosition.cs",
+        "file:Models/SocialLink.cs",
+        "file:Constants/Routes.cs",
+        "file:Constants/AppConstants.cs"
+      ]
+    },
+    {
+      "id": "layer:client-infrastructure",
+      "name": "Client Infrastructure",
+      "description": "Browser-side JavaScript utilities and PWA service workers. Includes JS interop helpers (scroll detection, touch swipe, file download) and service worker scripts for offline caching in development and production modes.",
+      "nodeIds": [
+        "file:wwwroot/js/site.js",
+        "file:wwwroot/service-worker.js",
+        "file:wwwroot/service-worker.published.js"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "Bootstrapping the Blazor WebAssembly App",
+      "description": "Program.cs is the entry point that creates the Blazor WebAssembly host. It registers HttpClient, IDataService (as JsonDataService), and ILocalizationService (as LocalizationService) into the DI container, then calls InitializeAsync to load the user's saved language preference before the app renders. This is where every dependency in the system gets wired together.",
+      "nodeIds": [
+        "file:Program.cs"
+      ],
+      "languageLesson": "Blazor WASM uses the standard .NET Generic Host pattern. Services registered with AddScoped behave as singletons in WASM since there is only one 'scope' (the browser tab). Note how InitializeAsync is awaited before RunAsync to ensure locale data is ready at first paint."
+    },
+    {
+      "order": 2,
+      "title": "The Router and Layout Shell",
+      "description": "App.razor is the root Blazor component that hosts the Router. It maps matched URLs to page components rendered inside MainLayout, and provides a fallback 'Not found' message for unmatched routes. The _Imports.razor file supplies global @using directives so every .razor file can reference Models, Services, Constants, and Components without per-file imports.",
+      "nodeIds": [
+        "file:App.razor",
+        "file:Layout/MainLayout.razor",
+        "file:_Imports.razor"
+      ],
+      "languageLesson": "Blazor's Router component uses reflection to discover all @page-annotated components at startup. MainLayout inherits LayoutComponentBase and renders @Body, which is the placeholder where matched page content is injected."
+    },
+    {
+      "order": 3,
+      "title": "The Landing Page: Composing Sections",
+      "description": "Home.razor is the root landing page routed at '/'. It acts purely as a composition shell, rendering Navbar, Hero, Careers, Contact, and Footer in sequence with no logic of its own. This establishes the top-down visual structure of the entire site in a single, readable file.",
+      "nodeIds": [
+        "file:Pages/Home.razor"
+      ],
+      "languageLesson": "Blazor encourages component composition over inheritance. Home.razor has zero code-behind logic -- it simply declares child components in markup order, delegating all behavior and data fetching to each section component."
+    },
+    {
+      "order": 4,
+      "title": "Navigation: Scroll-Aware Navbar with JS Interop",
+      "description": "Navbar.razor is a responsive navigation bar that uses JS interop to detect scroll position. On first render, OnAfterRenderAsync calls setupScrollListener in site.js, passing a DotNetObjectReference so JavaScript can invoke the [JSInvokable] OnScroll method back in C#. This toggles a 'scrolled' CSS class when the user scrolls past 50 pixels. It also embeds the LanguageSelector component and uses Routes constants for anchor links.",
+      "nodeIds": [
+        "file:Shared/Navbar.razor",
+        "function:Shared/Navbar.razor:OnAfterRenderAsync",
+        "function:Shared/Navbar.razor:OnScroll",
+        "file:Shared/LanguageSelector.razor"
+      ],
+      "languageLesson": "The JS interop bridge pattern here is canonical Blazor: C# passes a DotNetObjectReference to JS, and JS calls back via invokeMethodAsync. The [JSInvokable] attribute exposes the C# method to the JavaScript runtime. This is how Blazor handles browser APIs that have no .NET equivalent."
+    },
+    {
+      "order": 5,
+      "title": "The Hero Section: Typing Animation and Theming",
+      "description": "Hero.razor creates the eye-catching landing banner with a typewriter animation that cycles through localized title text character by character. It uses a System.Threading.Timer to append one character at a time, pauses for 3 seconds when complete, then resets and loops. The component subscribes to language-change events so the animation restarts with the new locale's text.",
+      "nodeIds": [
+        "file:Shared/Hero.razor",
+        "function:Shared/Hero.razor:OnInitialized",
+        "function:Shared/Hero.razor:TypeNextChar"
+      ],
+      "languageLesson": "Timer callbacks in Blazor WASM run on the single UI thread, so there is no need for thread synchronization. However, the component must call InvokeAsync(StateHasChanged) because the timer callback fires outside the Blazor rendering pipeline. Implementing IDisposable to dispose the timer prevents memory leaks."
+    },
+    {
+      "order": 6,
+      "title": "Careers Section and the Generic Slider",
+      "description": "Careers.razor fetches job positions via IDataService and displays them in an infinite-loop carousel powered by the generic Slider component. Each card shows the job code, type, level, location, description, and requirements. The Slider uses CSS transforms for transitions, clone-based wrapping for seamless looping, and JS interop for touch swipe gesture detection on mobile devices.",
+      "nodeIds": [
+        "file:Shared/Careers.razor",
+        "file:Shared/Slider.razor",
+        "function:Shared/Slider.razor:NextSlide",
+        "function:Shared/Slider.razor:PrevSlide"
+      ],
+      "languageLesson": "Slider.razor is a generic component (using @typeparam TItem) that accepts any data type and a RenderFragment<TItem> template for rendering each slide. This is Blazor's equivalent of React's render props pattern, enabling full content flexibility while encapsulating carousel logic."
+    },
+    {
+      "order": 7,
+      "title": "Contact Section and Icon Components",
+      "description": "Contact.razor fetches social links via IDataService and renders them as interactive cards with brand icons. It selects between LinkedInIcon, GitHubIcon, and ArrowIcon based on each link's IconType property. These icon components are pure presentational SVG wrappers with a single Size parameter and no service dependencies, representing the leaf nodes of the component tree.",
+      "nodeIds": [
+        "file:Shared/Contact.razor",
+        "file:Components/Icons/LinkedInIcon.razor",
+        "file:Components/Icons/GitHubIcon.razor",
+        "file:Components/Icons/ArrowIcon.razor"
+      ],
+      "languageLesson": "Small, single-purpose components like these icons follow the Blazor best practice of keeping components focused. Using [Parameter] properties with default values (Size = 28) provides sensible defaults while allowing parent components to override when needed."
+    },
+    {
+      "order": 8,
+      "title": "Footer and Application Constants",
+      "description": "Footer.razor displays branding (logo symbol, company name, tagline) and a dynamically computed copyright year. It pulls all branding text from AppConstants, which centralizes the company name, tagline, social URLs, and SEO metadata. Routes.cs defines the anchor-based navigation constants (Home, #careers, #contact) used by the Navbar.",
+      "nodeIds": [
+        "file:Shared/Footer.razor",
+        "file:Constants/AppConstants.cs",
+        "file:Constants/Routes.cs"
+      ],
+      "languageLesson": "Using static classes with const fields for application-wide values is a clean alternative to configuration files for values that never change at runtime. The nested class pattern (AppConstants.Social, AppConstants.Meta) provides namespace-like organization without separate files."
+    },
+    {
+      "order": 9,
+      "title": "Localization Service: Multi-Language Support",
+      "description": "ILocalizationService defines the contract for language switching, and LocalizationService implements it by fetching JSON locale files via HttpClient. It persists the user's language preference to localStorage through JS interop, loads English as a fallback, and fires an OnLanguageChanged event that every localized component subscribes to for re-rendering. This event-driven approach means adding a new language requires only a new JSON file.",
+      "nodeIds": [
+        "file:Services/ILocalizationService.cs",
+        "file:Services/LocalizationService.cs",
+        "function:Services/LocalizationService.cs:SetLanguageAsync",
+        "function:Services/LocalizationService.cs:InitializeAsync"
+      ],
+      "languageLesson": "The indexer pattern (this[string key]) lets components access translations with clean syntax like _loc['NavHome']. The OnLanguageChanged event uses the standard C# event pattern to decouple the service from its consumers -- components subscribe in OnInitialized and unsubscribe in Dispose."
+    },
+    {
+      "order": 10,
+      "title": "Data Service: JSON-Based Data Access with Caching",
+      "description": "IDataService defines async methods for retrieving job positions and social links. JsonDataService implements this by loading localized JSON files via HttpClient, caching results per language, and automatically invalidating the cache when the language changes. The generic LoadDataAsync method handles fetching, deserialization, caching, and English fallback for any entity type in a single reusable method.",
+      "nodeIds": [
+        "file:Services/IDataService.cs",
+        "file:Services/JsonDataService.cs",
+        "function:Services/JsonDataService.cs:LoadDataAsync",
+        "function:Services/JsonDataService.cs:OnLanguageChanged"
+      ],
+      "languageLesson": "JsonDataService implements IDisposable to unsubscribe from the localization event, preventing memory leaks. The generic LoadDataAsync<T> method demonstrates how C# generics combine with async/await to create a single data-loading pipeline that works for any JSON-backed entity type."
+    },
+    {
+      "order": 11,
+      "title": "Data Models: Immutable Records",
+      "description": "JobPosition and SocialLink are C# record types representing the core domain data. JobPosition holds fields for job listings (code, title, level, location, type, optional description and requirements). SocialLink holds social media link metadata (name, URL, description, icon type). These records are deserialized from the JSON files that JsonDataService fetches.",
+      "nodeIds": [
+        "file:Models/JobPosition.cs",
+        "class:Models/JobPosition.cs:JobPosition",
+        "file:Models/SocialLink.cs",
+        "class:Models/SocialLink.cs:SocialLink"
+      ],
+      "languageLesson": "C# records provide value-based equality, immutability, and concise syntax out of the box. Using 'record' instead of 'class' means these types are treated as data carriers with structural equality -- two JobPosition instances with the same field values are considered equal without needing to override Equals."
+    },
+    {
+      "order": 12,
+      "title": "Client Infrastructure: JS Interop and Service Workers",
+      "description": "site.js provides the browser-side utilities that Blazor components call via IJSRuntime: setupScrollListener for navbar scroll detection, sliderTouch for swipe gesture handling with 50px threshold detection, and downloadFile for base64-to-blob file downloads. The service workers complete the PWA story -- service-worker.js is a no-op stub for development, while service-worker.published.js implements content-hash precaching, network-first navigation with offline fallback, and cache-first static asset serving for production.",
+      "nodeIds": [
+        "file:wwwroot/js/site.js",
+        "function:wwwroot/js/site.js:setupScrollListener",
+        "class:wwwroot/js/site.js:sliderTouch",
+        "file:wwwroot/service-worker.js",
+        "file:wwwroot/service-worker.published.js"
+      ]
+    }
+  ]
+}
